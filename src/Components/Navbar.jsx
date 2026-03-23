@@ -4,7 +4,7 @@ import { UserContext } from "../Context/UserContext";
 import useScroll from "../Hooks/useScroll";
 
 export default function Navbar() {
-  const { user } = useContext(UserContext);
+  const { user, setDataUser} = useContext(UserContext);
   const [scroll, ref] = useScroll();
 
   return (
@@ -24,6 +24,14 @@ export default function Navbar() {
           <Link className="item" to="/info">
             Info
           </Link>
+        )}
+        {user && (
+          <div>
+            <p>Welcome, {user.userName} </p>
+            <button className="btn btn-secondary" onClick={() => setDataUser(null)}>
+              Logout
+            </button>
+          </div>
         )}
         <Link className="item" to="/data">
           Data
