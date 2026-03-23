@@ -6,23 +6,29 @@ export default function Data() {
 
   return (
     <>
-      <h1>Data</h1>
+      <h1 className="text-4xl font-bold text-gray-900">Data</h1>
       <div className="buttons">
         <button
+          className="btn btn-primary"
           onClick={() => setUrl("https://jsonplaceholder.typicode.com/posts")}
         >
           Post
         </button>
         <button
+          className="btn btn-primary"
           onClick={() => setUrl("https://jsonplaceholder.typicode.com/users")}
         >
           Users
         </button>
       </div>
-      <ul>
+      <ul className="list text-blue-900 rounded-box shadow-md">
         {data &&
           data.map((item) => {
-            return <li key={item.id}>{item.title || item.name}</li>;
+            return (
+              <li className="list-row" key={item.id}>
+                {item.title || item.name}
+              </li>
+            );
           })}
       </ul>
     </>

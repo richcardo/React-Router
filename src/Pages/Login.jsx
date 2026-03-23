@@ -1,7 +1,7 @@
 export default function Login() {
   return (
     <div className="container">
-      <h1>Login</h1>
+      <h1 className="text-4xl font-bold text-gray-900">Login</h1>
       <div className="card">
         <form>
           <div>
@@ -12,7 +12,7 @@ export default function Login() {
             <label htmlFor="password">password</label>
             <input type="password" placeholder="Password" />
           </div>
-          <button>Login</button>
+          <button className="btn btn-primary">Login</button>
         </form>
       </div>
     </div>

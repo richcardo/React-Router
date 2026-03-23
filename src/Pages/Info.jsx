@@ -4,12 +4,12 @@ export default function Info() {
   return (
     <>
       <div className="container">
-        <h1>Info</h1>
+        <h1 className="text-2xl font-bold text-gray-900">Info</h1>
       </div>
       <ul>
         {posts.map((post) => {
           return (
-            <li>
+            <li className="text-gray-700">
               {post.title}{" "}
               <Link className="link" to={`/info/details/${post.id}`}>Read More</Link>
             </li>

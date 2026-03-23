@@ -8,8 +8,15 @@ export default function Navbar() {
   const [scroll, ref] = useScroll();
 
   return (
-    <nav ref={ref} className={scroll > 0 ? "navbar" : "navScroll"}>
-      <div className="links">
+    <nav
+      ref={ref}
+      className={`fixed top-0 w-full transition-all duration-300 flex justify-between items-center h-[70px] ${
+        scroll > 0
+          ? "bg-zinc-600 shadow-md text-black"
+          : "bg-black text-white"
+      }`}
+    >
+      <div className="links ms-1 items-center">
         <Link className="item" to="/">
           Home
         </Link>
@@ -18,9 +25,11 @@ export default function Navbar() {
             Info
           </Link>
         )}
-        <Link className="item" to="/data">Data</Link>
+        <Link className="item" to="/data">
+          Data
+        </Link>
       </div>
-      <div className="auth">
+      <div className="auth me-1 items-center">
         <Link className="item" to="/login">
           Login
         </Link>

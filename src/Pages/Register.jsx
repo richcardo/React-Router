@@ -2,21 +2,20 @@ import { useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContext";
 export default function Register() {
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const {user, setDataUser} = useContext(UserContext);
+  const { user, setDataUser } = useContext(UserContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setDataUser({name,email});
+    setDataUser({ name, email });
     console.log(user);
-  }
+  };
 
   return (
     <div className="container">
-      <h1>Register</h1>
+      <h1 className="text-4xl font-bold text-gray-900">Register</h1>
       <div className="card">
         <form onSubmit={handleSubmit}>
           <div>
@@ -37,7 +36,7 @@ export default function Register() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <button>Register</button>
+          <button className="btn btn-primary">Register</button>
         </form>
       </div>
     </div>
